@@ -32,17 +32,23 @@ union() {
 
 //        color("magenta",0.5)
 //        translate([0,60,2]) cube([96.4, 24.2, 22.7]);
-        translate([96.4,60,2]) cube([2, 24.2, 5]);
+        translate([96.4,58,2]) cube([2, 28.2, 5]);
         translate([0,58,2]) cube([96.4, 2, 5]);
         translate([0,84.2,2]) cube([96.4, 2, 5]);
     
-//        translate([screwCyl,screwCyl,2]) cylinder(r=screwCyl,h=frontPlateThickness+22);
+        translate([48,53,2]) cylinder(r=2.5,h=14);
+        translate([66.5,53,2]) cylinder(r=2.5,h=14);
+    
+        translate([screwCyl,screwCyl,2]) cylinder(r=screwCyl+1,h=frontPlateThickness+22);
 //    
-//        translate([screwCyl,cubeFrontPlateRectWidth-2,2]) cylinder(r=screwCyl,h=frontPlateThickness+22);
+        difference() {
+        translate([screwCyl,cubeFrontPlateRectWidth-3,2]) cylinder(r=screwCyl+1,h=frontPlateThickness+22);
+        translate([0,60,2]) cube([10, 24.2, 22.7]);
+        }
 //    
-//        translate([cubeFrontPlateRectHeight-1,screwCyl,2]) cylinder(r=screwCyl+1,h=frontPlateThickness+22);
+        translate([cubeFrontPlateRectHeight-3,screwCyl,2]) cylinder(r=screwCyl+1,h=frontPlateThickness+22);
 //    
-//        translate([cubeFrontPlateRectHeight-1,cubeFrontPlateRectWidth-1,2]) cylinder(r=screwCyl+1,h=frontPlateThickness+22);
+        translate([cubeFrontPlateRectHeight-3,cubeFrontPlateRectWidth-3,2]) cylinder(r=screwCyl+1,h=frontPlateThickness+22);
 
     
     // walls
@@ -62,7 +68,8 @@ union() {
           cube([cubeFrontPlateRectHeight-4,cubeFrontPlateRectWidth-4,frontPlateThickness+3]);
         }
         
-        translate([-2.2,65,4]) cube([2.4, 14.2, 7.5]);
+//        translate([-2.2,65,4]) cube([2.4, 14.2, 7.5]);
+        translate([-2.2,65,5]) cube([2.4, 14.2, 7.5]);
     }
 
 //    translate([0,0,42]) color("magenta",0.5)
