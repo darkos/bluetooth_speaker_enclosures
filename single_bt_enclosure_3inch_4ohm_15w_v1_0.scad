@@ -2,14 +2,13 @@ $fn=100; // resolution
 frontPlateThickness=1;
 cylRoundEdgeRadius=2;
 
-face_plate_height = 94;
-face_plate_width = 94;
+face_plate_height = 73;
+face_plate_width = 73;
 
-speakerRadius=38;
-//speakerOffset = 10;
-speakerOffset = (face_plate_width - (speakerRadius * 2))/2;
+speakerRadius=25.5;
+speakerOffset = 10;
 
-boxDepth = 65;
+boxDepth = 45;
 
 screwHolderSide = 10;
 screwHoleRadius = 1.4;
@@ -39,29 +38,16 @@ difference() {
 }
 
 // back cover
-difference() {
-    union() {
-        translate([0,0,boxDepth * 2 + 6])
-        minkowski() {
-            cylinder(r=cylRoundEdgeRadius,h=frontPlateThickness);
-            cube([face_plate_width, face_plate_height, frontPlateThickness]);
-        }
-        translate([0,0,boxDepth * 2 + 3])
-        cube([face_plate_width, face_plate_height, frontPlateThickness + 2]);
+union() {
+    translate([0,0,boxDepth * 2 + 6])
+    minkowski() {
+        cylinder(r=cylRoundEdgeRadius,h=frontPlateThickness);
+        cube([face_plate_width, face_plate_height, frontPlateThickness]);
     }
-
-    translate([screwHolderSide/2, screwHolderSide/2, boxDepth * 2])
-        cylinder(r=screwHoleRadius,h=screwHoleDepth);
-
-    translate([face_plate_width - screwHolderSide + screwHolderSide/2, screwHolderSide/2, boxDepth * 2])
-        cylinder(r=screwHoleRadius,h=screwHoleDepth);
-
-    translate([face_plate_width - screwHolderSide + screwHolderSide/2, face_plate_height - screwHolderSide + screwHolderSide/2, boxDepth * 2])
-            cylinder(r=screwHoleRadius,h=screwHoleDepth);
-
-    translate([screwHolderSide/2, face_plate_height - screwHolderSide + screwHolderSide/2, boxDepth * 2])
-        cylinder(r=screwHoleRadius,h=screwHoleDepth);
+    translate([0,0,boxDepth * 2 + 3])
+    cube([face_plate_width, face_plate_height, frontPlateThickness + 2]);
 }
+
 // corner posts with screw hole
 difference() {
     cube([screwHolderSide, screwHolderSide, boxDepth-2]);
