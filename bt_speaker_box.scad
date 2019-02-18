@@ -24,12 +24,12 @@ union() {
 
         color("red", 0.5) translate([speakerRadius + speakerDist, speakerRadius + speakerDist, -1])
         cylinder(r=speakerRadius,h=(frontPlateThickness * 4));
-
+//
         color("blue", 0.5) translate([(speakerRadius * 3) + (speakerDist * 2), speakerRadius + speakerDist, -1])
         cylinder(r=speakerRadius,h=(frontPlateThickness * 4));
     }
     
-
+    
 //        color("magenta",0.5)
 //        translate([0,60,2]) cube([96.4, 24.2, 22.7]);
         translate([96.4,58,2]) cube([2, 28.2, 5]);
@@ -79,6 +79,7 @@ union() {
 //      cylinder(r=cylRoundEdgeRadius,h=frontPlateThickness);
 //      cube([cubeFrontPlateRectHeight,cubeFrontPlateRectWidth,frontPlateThickness]);
 //    }
+
     
 }
 
