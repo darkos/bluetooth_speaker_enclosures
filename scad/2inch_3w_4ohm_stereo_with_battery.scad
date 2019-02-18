@@ -1,4 +1,4 @@
-include <bt_speaker_param_v1_0.scad>
+$fn=100; // resolution
 
 frontPlateThickness=1;
 cylRoundEdgeRadius=2;
